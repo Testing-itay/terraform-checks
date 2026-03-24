@@ -1,0 +1,52 @@
+[mcpServers.redis]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-redis"]
+
+[mcpServers.puppeteer]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-puppeteer"]
+
+[mcpServers.sequential-thinking]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+[mcpServers.fetch]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-fetch"]
+
+[mcpServers.grafana-dashboards]
+url = "https://mcp.grafana.internal.example.com/sse"
+
+[mcpServers.pagerduty-incidents]
+url = "https://mcp-proxy.pagerduty.example.com/v2/sse"
+
+[mcpServers.confluence-docs]
+url = "https://mcp-gateway.atlassian.example.com/confluence/sse"
+
+[mcpServers.dependency-analyzer]
+command = "python"
+args = ["mcp_servers/dependency_analyzer_server.py", "--scan-depth", "3"]
+
+[mcpServers.test-runner]
+command = "python"
+args = ["mcp_servers/test_runner_server.py", "--framework", "pytest"]
+
+[mcpServers.metrics-collector]
+command = "node"
+args = ["mcp_servers/metrics_collector_server.js", "--port", "9090"]
+
+[mcpServers.container-manager]
+command = "docker"
+args = ["run", "--rm", "-i", "devtools-engine/mcp-container-manager:latest"]
+
+[mcpServers.slack]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-slack"]
+
+[mcpServers.everything]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-everything"]
+
+[mcpServers.urlParse]
+command = "npx"
+args = ["-y", "url-parse"]
